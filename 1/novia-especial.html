@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Día de la Novia Mi Johanna 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(to right, #ff5e78, #ffbad2);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(255, 105, 135, 0.4);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+    }
+
+    header p {
+      font-style: italic;
+      font-size: 1.3rem;
+    }
+
+    .content {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .tulipanes {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 105, 135, 0.3);
+      margin-bottom: 2rem;
+    }
+
+    .frase-dinamica {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #ff8fab;
+      min-height: 70px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .cuadros-imagenes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .cuadro {
+      width: 220px;
+      height: 220px;
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 192, 203, 0.3);
+      position: relative;
+    }
+
+    .cuadro {
+      width: 240px;
+      height: 280px;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 105, 135, 0.4);
+      border: 3px solid #ff8fab;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .cuadro:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 182, 193, 0.8);
+      border-color: #ff5e78;
+    }
+
+    .cuadro img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .cuadro::after {
+      content: "Tu imagen aquí 💕";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      text-align: center;
+      padding: 0.3rem;
+      font-size: 0.9rem;
+    }
+
+    .cuadro::before {
+      content: "";
+      background-image: url('img/cora.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 60px;
+      height: 60px;
+      z-index: 2;
+    }
+
+    footer {
+      background: #1c1c1c;
+      padding: 1.5rem;
+      text-align: center;
+      color: #ff8fab;
+      margin-top: 3rem;
+    }
+
+    .petalo {
+      position: fixed;
+      top: -50px;
+      width: 25px;
+      height: 25px;
+      background-image: url('img/tulipan.png');; /* pétalo rosa */
+      background-size: cover;
+      animation: caer 10s linear infinite;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .pequena {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+    }
+
+
+    @keyframes caer {
+      0% { transform: translateY(-50px) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Feliz Día de la Novia mi Reina Hermosa 🌷</h1>
+    <p>Por tu día mi Vida - Para ti, la dueña de mi corazón, mi mujer, mi novia, y mi Futura Esposa que amo con todo mi ser y corazón</p>
+  </header>
+
+  <div class="content">
+    <img class="tulipanes pequena" src="img/1.jpg" alt="Tulipanes hermosos para ti">
+
+    <div class="frase-dinamica" id="fraseDinamica">🌷 Eres todo para mi Johanna, solo te necesito a ti y a nadie más, contigo soy feliz 🌷</div>
+
+    <div class="cuadros-imagenes">
+      <div class="cuadro" id="imagen1">
+        <img src="img/2.jpg" alt="Hello Kitty">
+      </div>
+
+      <div class="cuadro" id="imagen2">
+        <img src="img/3.jpg" alt="Bubucita">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Hecho con todo mi amor ❤️ para la novia más increíble del mundo, perfecta, única e inigualable ❤️
+  </footer>
+
+  <script>
+    // pétalos
+    for (let i = 0; i < 25; i++) {
+      let petalo = document.createElement("div");
+      petalo.classList.add("petalo");
+      petalo.style.left = Math.random() * 100 + "vw";
+      petalo.style.animationDuration = (6 + Math.random() * 4) + "s";
+      petalo.style.opacity = Math.random() * 0.8 + 0.2;
+      document.body.appendChild(petalo);
+    }
+
+    // Frases románticas que cambian
+    const frases = [
+      "Eres la melodía perfecta que da ritmo a mi alma, la canción que quiero escuchar por el resto de mis días, sin pausa, sin final 🎶",
+      "Tus abrazos son el refugio donde el mundo se detiene, donde todo está bien y mi corazón encuentra paz absoluta 🫂",
+      "Desde que llegaste, cada amanecer se siente como un sueño hermoso del que nunca quiero despertar, porque tú eres mi realidad más dulce 🌙",
+      "Si el tiempo obedeciera a mis deseos, lo detendría justo en el instante en que tus labios rozan los míos, porque en ese segundo habita la eternidad 💋",
+      "Entre todas las flores del jardín de la vida, tú eres mi preferida: bella por fuera, fuerte por dentro y única como el amor que siento por ti 🌷",
+      "Te amo con una intensidad que supera a cada estrella del universo; ni el firmamento entero podría contener la inmensidad de lo que siento por ti ✨"
+    ];
+
+    let index = 0;
+    const fraseElement = document.getElementById("fraseDinamica");
+
+    setInterval(() => {
+      index = (index + 1) % frases.length;
+      fraseElement.textContent = frases[index];
+      fraseElement.style.animation = "none";
+      fraseElement.offsetHeight;
+      fraseElement.style.animation = "fadeIn 1.2s ease-in-out";
+    }, 4000);
+  </script>
+
+</body>
+</html>
